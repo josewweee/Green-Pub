@@ -1467,3 +1467,10 @@ ul.portfolio li.active {
 .uipasta-credit a:hover {
     color: #ffffff;
 }
+
+.priceText{
+  font-size: 85px;
+  padding: 50px;
+  color: black;
+  font-family: latobold;
+}

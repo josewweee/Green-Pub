@@ -213,8 +213,8 @@
             maptype: 'ROADMAP',
             markers:[
             {
-            address: "New York",  /* You can change your address from here */
-            html: "<b>Address</b>: <br> Area-2, Rose Area, New York, U.S.A.",   /* You can change display address text from here */
+            address: "Medellin",  /* You can change your address from here */
+            html: "<b>Address</b>: <br> Area-050022, Poblado, Medellin, Colombia.",   /* You can change display address text from here */
             popup: true
             }
             ]

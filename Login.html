@@ -57,17 +57,17 @@
                 </div>
 
                     <div class="col-sm-4 col-sm-offset-1">
-                        <form role="form" action="" method="post" class="l-form">
+                        <div role="form" action="" method="post" class="l-form">
                             <div class="form-group">
                                 <label class="sr-only" for="l-form-username">Email</label>
-                                <input type="text" name="l-form-username" placeholder="Email..." class="l-form-username form-control" id="l-form-username">
+                                <input type="text" name="l-form-username" placeholder="Email..." class="l-form-username form-control" id="correo">
                             </div>
                             <div class="form-group">
                                 <label class="sr-only" for="l-form-password">Contraseña</label>
-                                <input type="password" name="l-form-password" placeholder="Contraseña..." class="l-form-password form-control" id="l-form-password">
+                                <input type="password" name="l-form-password" placeholder="Contraseña..." class="l-form-password form-control" id="contraseña">
                             </div>
-                            <button type="submit" class="btn">Inicia Seccion!</button>
-                        </form>
+                            <button type="submit" class="btn" onclick="BtnLogin()">Inicia Seccion!</button>
+                        </div>
                         <div class="social-login">
                             <p>Or login with:</p>
                             <div class="social-login-buttons">
@@ -100,7 +100,14 @@
                             </div>
                         </div>
                     </div>
+
+
+        <!--Firebase Scripts -->
+        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+
+
          <!-- Javascript -->
+         <script src="js/Login.js"></script>
         <script src="assets/js/jquery-1.11.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/js/jquery.backstretch.min.js"></script>

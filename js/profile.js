@@ -111,7 +111,7 @@ function Update_History_Table(ref)
 				table += '</tr>';
 				j++;
 			}
-			document.getElementById("refer-list").innerHTML = '<table>' + table + '</table>';
+			document.getElementById("refer-list").innerHTML = '<table class="moma">' + table + '</tbody>' + '</table>';
 			console.log(table);
         }, 1000);
 	
@@ -156,6 +156,7 @@ function CargarFoto(){
   			text: $("#ImageText").val()
   		});
    		console.log(downloadURL);
+   		window.alert("Foto Agregada Exitosamente");
 	});
 }
 
@@ -175,3 +176,17 @@ function PreviewPhoto(input){
 $(document).on('change', 'input[type="file"]',function(){
 	PreviewPhoto(this);
 })
+
+
+// -------------------- FUNCION PARA CERRAR SECCION --------------------
+
+function LogOut(){
+	firebase.auth().signOut().then(function() {
+		// Sign-out successful.
+		windows.alert("seccion cerrada correctamente");
+		window.location.href="index.html";
+	}, function(error) {
+    	// An error happened.
+    	windows.alert("Un error ha sucedido, por favor comuniquese con lancha para mas informacion");
+	});
+}

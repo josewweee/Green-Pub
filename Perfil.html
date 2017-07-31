@@ -23,32 +23,32 @@
     <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="images/favicon/apple-touch-icon.png">
     
     <!-- Main CSS Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/profile-style.css">
+   <!-- <link rel="stylesheet" type="text/css" href="css/profile-style.css">
     <link rel="stylesheet" type="text/css" href="css/profile-style2.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css"> -->
 
-    <!--    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css"> -->
+        <link rel="stylesheet" href="assets/css/style.css">
 
 
     
  </head>
 
 
- <body>
+ <body background="images/login/hotel - oscura2.jpg">
 <div class="col-lg-12 col-sm-12">
     <div class="card hovercard">
         <div class="card-background">
-            <img class="card-bkimg" alt="" src="images/login/hotel - oscura.jpg"> 
+           <!-- <img class="card-bkimg" alt="" src="images/login/hotel - oscura.jpg">  -->
             <!-- http://lorempixel.com/850/280/people/9/ -->
         </div>
         <div class="useravatar">
-            <img alt="" src="http://lorempixel.com/100/100/people/9/">
+         <!--   <img alt="" src="http://lorempixel.com/100/100/people/9/"> -->
         </div>
-        <div class="card-info"> <span class="card-title" id= "Card_UserName">OG ganster</span>
+        <div class="card-info"> <h1 class="card-title" style="color:#fff" id= "Card_UserName">OG ganster</h1>
 
         </div>
     </div>
@@ -80,10 +80,13 @@
         </div>
     </div>
 
-        <div class="well">
+        <div class="well" style="background-color: rgba(53, 53, 53, 0.62); border: white">
       <div class="tab-content">
 
+
+
 <!--PAGOS -->
+
         <div class="tab-pane fade in active" id="tab1">
         <!-- EL LABEL DE PUBLICIDAD TIENE QUE SER DINAMICO -->
           <h3>Saldo Actual: <label id="balance">10</label> <label> USD </label> </h3> 
@@ -101,7 +104,7 @@
             <h3>Historial de pagos</h3>
             <!--ESTO TIENE QUE SER DINAMICO, SABRA EL PUTAS COMO -->
             <div id="history-table">
-                <table>
+                <table class="moma">
                   <tr>
                     <th>Fecha</th>
                     <th>Nombre</th>
@@ -151,11 +154,6 @@
 
 <!--REFERIDOS -->
         <div class="tab-pane fade in" id="tab2">
-            <div class="instrucciones-referidos">
-              <h3><label>Instrucciones</label></h3>
-                <h4>Ya ha pagado "X"</h4>
-                <h4>No ha pagado "O"</h4>
-            </div>
 
          <h3>Tu codigo de referencia es: <label id ="My_code"> 99999</label></h3>
                 
@@ -164,7 +162,7 @@
             <h3>Lista de Referidos</h3>
             <!--YA SE COMO -->
             <div id="refer-list">
-                <table>
+                <table class="moma">
                   <tr>
                     <th>Nombre</th>
                     <th>Pago</th>
@@ -309,9 +307,18 @@
         </div>
 
 
+
+
       </div>
     </div>
     
+    <!--CERRAR SECCION -->
+          <button type="button" id="LogOut" class="btn btn-default" onclick="LogOut()">
+            <div class="hidden-xs">Cerrar seccion</div>
+          </button>
+
+
+
     </div>
 
 

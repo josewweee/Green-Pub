@@ -24,16 +24,14 @@ function submitRegister() {
 	var Rpassword = document.getElementById("Rcontraseña").value;
 	var referCode = document.getElementById("codigoRef").value;
 	var father;
-
+	//FALTA AGREGAR EL REFERIDO POR DEFAULT QUE SE REFIERE DIRECTO A MI
 	if(referCode.length < 3){
 		referCode = "MORE_MONEY_BITCHES";
 	}else{
 		refe.orderByChild('refer_code').equalTo(referCode).on("child_added", function(snapshot)
 		{
 			father = snapshot.val().email;
-			console.log("buscaremos el usuario con referencia: " + snapshot.key);	
 			var address = "Users/" + snapshot.key + "/childs";
-			console.log("meteremos el hijo en: " + " " + address); 
 			var ref = firebaseRef.child("Users/" + snapshot.key + '/childs');
 			ref.push({
 				email: email,

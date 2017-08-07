@@ -95,7 +95,7 @@ function Update_History_Table(ref)
 		while(i < Look_For_email.length){
 			firebase.database().ref("Users").orderByChild('email').equalTo(Look_For_email[i]).on("child_added", function(snapshot) {
 						pagare.push(snapshot.val().payment_history.pago.payment);
-						console.log(pagare);						
+						//console.log(pagare);						
 			});
 			i++;
 		}
@@ -112,7 +112,7 @@ function Update_History_Table(ref)
 				j++;
 			}
 			document.getElementById("refer-list").innerHTML = '<table class="moma">' + table + '</tbody>' + '</table>';
-			console.log(table);
+			//console.log(table);
         }, 1000);
 	
 		
@@ -151,11 +151,11 @@ function CargarFoto(){
 	}, function() {
   		var downloadURL = uploadTask.snapshot.downloadURL;
   		var AdvertisingRef = ref.child("advertising");
-  		AdvertisingRef.push({
+  		AdvertisingRef.update({
   			image: downloadURL,
   			text: $("#ImageText").val()
   		});
-   		console.log(downloadURL);
+   		//console.log(downloadURL);
    		window.alert("Foto Agregada Exitosamente");
 	});
 }
@@ -189,4 +189,44 @@ function LogOut(){
     	// An error happened.
     	windows.alert("Un error ha sucedido, por favor comuniquese con lancha para mas informacion");
 	});
+}
+
+// -------------------- FUNCION PARA MOSTRAR TODAS LAS IMAGENES --------------------
+
+		 var ImagesRef = firebase.database().ref("Users");
+         var storageRef = firebase.storage().ref();
+         var spaceRef = storageRef.child('Publicidad');
+         var Imagenes = '<div id="Imagenes_publicidad">';
+         var imagenes_Url = [" ", " "];
+         var imagenes_Text = [" ", " "];
+
+         ImagesRef.orderByChild("advertising").on("child_added", function(snapshot){
+			imagenes_Url.push(snapshot.val().advertising.image);
+			imagenes_Text.push(snapshot.val().advertising.text);
+		});
+         //"https://firebasestorage.googleapis.com/v0/b/greenpub-2db97.appspot.com/o/Publicidad%2Ffondo1.jpg?alt=media&token=ea116cde-82ff-4a0f-b0a4-12da100e2ee8"
+         setTimeout(function(){
+            var j = 2;
+			while(j < imagenes_Url.length){
+				
+				Imagenes += '<div class="floated_img">';
+					Imagenes += '<img height="200" width="200" src="' + imagenes_Url[j] + '" onclick="openNav('+"'"+imagenes_Url[j]+"'"+','+"'"+imagenes_Text[j]+"'"+')">';
+				Imagenes += '</div>';
+				j++;
+			}
+			document.getElementById("Imagenes_publicidad").innerHTML = '<div class="Imagenes_publicidad">' + Imagenes + '</div>';
+        }, 3000);
+
+
+
+function openNav(imagen, texto) {
+	var overlay_content = '<img src="'+imagen+'">';
+	overlay_content += '<p style="font-size: large;">'+ texto + '</p>';
+    document.getElementById("myNav").style.width = "100%";
+    document.getElementById("Ov-content").innerHTML = overlay_content;
+}
+
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
 }

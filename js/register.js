@@ -24,6 +24,7 @@ function submitRegister() {
 	var Rpassword = document.getElementById("Rcontraseña").value;
 	var referCode = document.getElementById("codigoRef").value;
 	var father;
+	var IsOkRegister = 0;
 	//FALTA AGREGAR EL REFERIDO POR DEFAULT QUE SE REFIERE DIRECTO A MI
 	if(referCode.length < 3){
 		referCode = "MORE_MONEY_BITCHES";
@@ -44,14 +45,17 @@ function submitRegister() {
 	if(password == Rpassword){
 		if (email.length < 4) {
           alert('Entra un email valido.');
+          IsOkRegister++;
           return;
         }
-        if (password.length < 4) {
+        if (password.length < 6) {
           alert('Entra una contraseña mas larga.');
+          IsOkRegister++;
           return;
         }
 	}else{
 		alert("Asegurate de haber escrito bien la contraseña las 2 veces");
+		IsOkRegister++;
 		return;
 	}
 
@@ -61,15 +65,24 @@ function submitRegister() {
 
 	  if (errorCode === 'auth/wrong-password') {
             alert('Contraseña equivocada.');
+            IsOkRegister++;
             return;
           } else {
             alert(errorMessage);
+            IsOkRegister++;
             return;
           }
 	});
 	var my_code = Math.floor((Math.random() * 10000) + 1);
-	AddUser_info(email, password, name, last_name, referCode, my_code);
-	ChangeView();
+
+	setTimeout(function(){
+		if(IsOkRegister == 0){
+			AddUser_info(email, password, name, last_name, referCode, my_code);
+		}
+		ChangeView();
+	}, 2000);
+
+	
 }	
 
 function AddUser_info(email, password, name, last_name, referCode, my_code){

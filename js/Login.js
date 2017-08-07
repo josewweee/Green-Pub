@@ -60,13 +60,13 @@ function BtnLogin(){
 }
 
 function ChangeView(){
-	var user = firebase.auth().currentUser;
-	if (user) {
-	  alert("seccion iniciada");
-	  setTimeout(function(){
-                window.location.href="Perfil.html"; // The URL that will be redirected too.
-            }, 3000);
-	} else {
-	  alert("nadie ha iniciado seccion");
-	}
+  setTimeout(function(){
+  	var user = firebase.auth().currentUser;
+  	if (user) {
+  	  alert("seccion iniciada");
+        window.location.href="Perfil.html"; // The URL that will be redirected too.
+  	} else {
+  	  alert("nadie ha iniciado seccion");
+  	}
+  }, 3000);
 }

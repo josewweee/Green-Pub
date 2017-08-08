@@ -122,11 +122,17 @@ function numPags()
 
 function cambiar_pagina(pagina_actual){
 	  var Imagenes = "";
+	  var Texto_a_Mandar;
       var j = (pagina_actual-1) * registros_por_pagina + 2;
       while(j < pagina_actual * registros_por_pagina + 2){
-      	if(imagenes_Url[j] != null){ 
+      	if(imagenes_Url[j] != null){
+      		Texto_a_Mandar = imagenes_Text[j];
+      		//ESOS .REPLACE TRANSFORMAN LOS ESPACIOS Y LOS ''  PARA QUE JS LOS PUEDE LEER EN EL PASO DE PARAMETROS
+      		Texto_a_Mandar = Texto_a_Mandar.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+      		Texto_a_Mandar = Texto_a_Mandar.replace(/'/g, "\\'");
+      		console.log(Texto_a_Mandar);
 	     	Imagenes += '<div class="floated_img">';
-			Imagenes += '<img height="200" width="200" src="' + imagenes_Url[j] + '" onclick="openNav('+"'"+imagenes_Url[j]+"'"+','+"'"+imagenes_Text[j]+"'"+')">';
+			Imagenes += '<img height="200" width="200" src="' + imagenes_Url[j] + '" onclick="openNav('+"'"+imagenes_Url[j]+"'"+','+"'"+Texto_a_Mandar+"'"+')">';
 			Imagenes += '</div>';
 		}else{
 			j = pagina_actual * registros_por_pagina + 3;

@@ -192,7 +192,7 @@ function LogOut(){
 }
 
 // -------------------- FUNCION PARA MOSTRAR TODAS LAS IMAGENES --------------------
-
+/*
 		 var ImagesRef = firebase.database().ref("Users");
          var storageRef = firebase.storage().ref();
          var spaceRef = storageRef.child('Publicidad');
@@ -204,7 +204,6 @@ function LogOut(){
 			imagenes_Url.push(snapshot.val().advertising.image);
 			imagenes_Text.push(snapshot.val().advertising.text);
 		});
-         //"https://firebasestorage.googleapis.com/v0/b/greenpub-2db97.appspot.com/o/Publicidad%2Ffondo1.jpg?alt=media&token=ea116cde-82ff-4a0f-b0a4-12da100e2ee8"
          setTimeout(function(){
             var j = 2;
 			while(j < imagenes_Url.length){
@@ -229,4 +228,14 @@ function openNav(imagen, texto) {
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+} */
+
+function Trip_Publicidad(){
+	//trip again
+	window.location.href="Publicidad.html";
+}
+
+function Trip_Menu(){
+	// triping back to home
+	window.location.href="index.html";
 }

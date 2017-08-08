@@ -232,11 +232,14 @@ footer a:hover, footer a:focus { color: #fff; border: 0; }
 
 /* paginacion (PROPIO) */
 
-.pagination{
+.paginationx{
 	margin: 20px 0;
+	position: absolute;
+	top: 80%;
+	left: 41%;
 }
 
-.pagination ul {
+.paginationx ul {
     display: inline-block;
     margin-bottom: 0;
     margin-left: 0;
@@ -248,11 +251,11 @@ footer a:hover, footer a:focus { color: #fff; border: 0; }
     box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-.pagination ul>li {
+.paginationx ul>li {
     display: inline;
 }
 
-.pagination ul>li>a{
+.paginationx ul>li>a{
     float: left;
     padding: 4px 12px;
     line-height: 20px;
@@ -260,4 +263,15 @@ footer a:hover, footer a:focus { color: #fff; border: 0; }
     background-color: #fff;
     border: 1px solid #ddd;
     border-left-width: 0;
+}
+
+.BotonVolver{
+    font-size: 20px;
+    color: white;
+    font-weight: 100;
+
+    position: absolute;
+    left: 2%; 
+    background-color: initial; 
+    border: initial;
 }

@@ -221,7 +221,7 @@
           <div class="row">
             <div class="col-lg-3">
               <h3>Cambiar mi metodo de pago</h3>
-                <select style="background: initial;">
+                <select style="background: initial;" id="NuevoPago">
                     <option value="Paypal">Paypal</option>
                     <option value="Efectivo">Efectivo (Western union)</option>
                     <option value="Transferencia">Transferencia (Cuentas Bancolombia)</option>
@@ -230,28 +230,25 @@
 
                 <br>
                 <br>
-
-                <button type="button" id="CambiarMetodoPago" class="btn btn-default">
+                <h4>Metodo de pago actual: <label id="Actual_payment_method">.....</label></h4>
+                <button type="button" id="CambiarMetodoPago" class="btn btn-default" style="margin-top: 156px;" onclick="MetPago()">
                 <div class="hidden-xs">Cambiar metodo de pago</div>
                 </button>
-
-                <br>
-                <br>
-                <h4>Metodo de pago actual: <label id="Actual_payment_method">.....</label></h4>
+                
 
             </div>
 
             <div class="col-lg-3">
               <h3>Cambiar mi contraseña</h3>
                 Nueva contraseña:<br>
-                <input type="text" name="NuevaContraseña" value="******" style="background: initial; color:white;"><br>
+                <input type="text" name="NuevaContraseña" value="******" style="background: initial; color:white;" id="NuevaContraseña"><br>
                 Repetir contraseña:<br>
-                <input type="text" name="RepetirContraseña" value="******" style="background: initial; color:white;"><br>
+                <input type="text" name="RepetirContraseña" value="******" style="background: initial; color:white;" id="NuevaContraseña2"><br>
 
                 <br>
                 <br>
 
-                <button type="button" id="CambiarContraseña" class="btn btn-default">
+                <button type="button" id="CambiarContraseña" class="btn btn-default" style="margin-top: 28px;" onclick="Cambiar_Contraseña()">
                 <div class="hidden-xs">Cambiar contraseña</div>
                 </button>
             </div>
@@ -259,7 +256,7 @@
             <div class="col-lg-3">
               <h3>Cambiar la forma como te vamos a pagar</h3>
 
-                <select style="background: initial;">
+                <select style="background: initial;" id="NuevoCons">
                     <option value="Paypal">Paypal</option>
                     <option value="Efectivo">Efectivo (Western union)</option>
                     <option value="Transferencia">Transferencia (Cuentas Bancolombia)</option>
@@ -267,23 +264,22 @@
                 </select>
                 <br>
                 <br>
+                <h4>Metodo de consignacion actual: <label id="Actual_dispatch_method">.....</label></h4>
 
-                <button type="button" id="CambiarConsignacion" class="btn btn-default">
+                <button type="button" id="CambiarConsignacion" class="btn btn-default" style="margin-top: 110px;" onclick="MetCons()">
                 <div class="hidden-xs">Cambiar metodo de consignacion</div>
                 </button>
 
-                <br>
-                <br>
-                <h4>Metodo de consignacion actual: <label id="Actual_dispatch_method">.....</label></h4>
+                
             </div>
 
             <div class="col-lg-3">
               <h3>Cambiar datos personales</h3>
                 Cambiar Email:<br>
-                <input type="text" name="NuevoEmail" value="Email" style="background: initial; color:white;"><br>
+                <input type="text" name="NuevoEmail" value="Email" style="background: initial; color:white;" id="NuevoEmail"><br>
 
                 <br>
-                <button type="button" id="CambiarDatosPersonales" class="btn btn-default">
+                <button type="button" id="CambiarDatosPersonales" class="btn btn-default" style="margin-top: 127px;" onclick="Cambiar_Email()">
                 <div class="hidden-xs">Cambiar datos personales</div>
                 </button>
             </div>

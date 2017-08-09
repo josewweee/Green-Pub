@@ -38,7 +38,7 @@
  </head>
 
 
- <body background="images/login/hotel - oscura2.jpg">
+ <body class="FondoPantalla">
 <div class="col-lg-12 col-sm-12">
     <div class="card hovercard">
         <div class="card-background">
@@ -221,7 +221,7 @@
           <div class="row">
             <div class="col-lg-3">
               <h3>Cambiar mi metodo de pago</h3>
-                <select>
+                <select style="background: initial;">
                     <option value="Paypal">Paypal</option>
                     <option value="Efectivo">Efectivo (Western union)</option>
                     <option value="Transferencia">Transferencia (Cuentas Bancolombia)</option>
@@ -244,9 +244,9 @@
             <div class="col-lg-3">
               <h3>Cambiar mi contraseña</h3>
                 Nueva contraseña:<br>
-                <input type="text" name="NuevaContraseña" value="******"><br>
+                <input type="text" name="NuevaContraseña" value="******" style="background: initial; color:white;"><br>
                 Repetir contraseña:<br>
-                <input type="text" name="RepetirContraseña" value="******"><br>
+                <input type="text" name="RepetirContraseña" value="******" style="background: initial; color:white;"><br>
 
                 <br>
                 <br>
@@ -259,7 +259,7 @@
             <div class="col-lg-3">
               <h3>Cambiar la forma como te vamos a pagar</h3>
 
-                <select>
+                <select style="background: initial;">
                     <option value="Paypal">Paypal</option>
                     <option value="Efectivo">Efectivo (Western union)</option>
                     <option value="Transferencia">Transferencia (Cuentas Bancolombia)</option>
@@ -279,16 +279,10 @@
 
             <div class="col-lg-3">
               <h3>Cambiar datos personales</h3>
-                Cambiar Nombre:<br>
-                <input type="text" name="NuevoNombre" value="Nombre"><br>
-                Cambiar Apellidos:<br>
-                <input type="text" name="NuevoApellido" value="Apellidos"><br>
                 Cambiar Email:<br>
-                <input type="text" name="NuevoEmail" value="Email"><br>
+                <input type="text" name="NuevoEmail" value="Email" style="background: initial; color:white;"><br>
 
                 <br>
-                <br>
-
                 <button type="button" id="CambiarDatosPersonales" class="btn btn-default">
                 <div class="hidden-xs">Cambiar datos personales</div>
                 </button>
@@ -297,9 +291,8 @@
 
 
         <div>
-        <button type="button" id="BorrarCuenta" class="btn btn-default">
-                <div class="hidden-xs">Solicitar Cancelacion de la cuenta</div>
-        </button>
+
+        
         </div>
 
         </div>
@@ -341,7 +334,9 @@
 <!---                      FIN PERFIL                  -->
       </div>
     </div>
-    
+    <button type="button" id="BorrarCuenta" class="btn btn-default">
+                <div class="hidden-xs">Solicitar Cancelacion de la cuenta</div>
+    </button>
     <!--CERRAR SECCION -->
           <button type="button" id="LogOut" class="btn btn-default" onclick="LogOut()">
             <div class="hidden-xs">Cerrar seccion</div>
